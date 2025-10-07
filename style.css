@@ -1,0 +1,78 @@
+/* Base layout and general styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Trebuchet MS", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+}
+
+/* Resized banner for neater fit */
+.banner-small {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Logo Section */
+.logo-section {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 240px;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Main Video */
+.main-video video {
+  width: min(800px, 75%);
+  margin-top: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Text Block */
+.text-block {
+  width: min(900px, 85%);
+  margin: 40px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+@media (max-width: 768px) {
+  .banner-small {
+    max-height: 140px;
+  }
+  .logo {
+    max-width: 180px;
+  }
+  .main-video video {
+    width: 90%;
+  }
+  .text-block {
+    font-size: 1rem;
+  }
+}
