@@ -31,20 +31,7 @@
   </video>
 </section>
 
-<script>
-  const video = document.getElementById('drongosVideo');
 
-  // Ensure video loops but pauses before restarting
-  video.addEventListener('ended', () => {
-    // Pause on last frame
-    video.pause();
-    // Wait 3 seconds (3000 ms)
-    setTimeout(() => {
-      video.currentTime = 0; // reset to start
-      video.play();
-    }, 3000);
-  });
-</script>
   
   <!-- Text Section -->
   <section class="text-block">
