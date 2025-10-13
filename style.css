@@ -10,17 +10,34 @@ html, body {
   background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
 }
 
-/* Resized banner for neater fit */
-.banner-small {
-/* Video banner styling */
-.banner-video {
+/* ===== Responsive Banner Video ===== */
+.banner {
+  position: relative;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  height: clamp(140px, 22vh, 260px); /* mobile -> desktop */
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  background: #000; /* fallback behind video while loading */
+}
+
+.banner__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures the video fills neatly */
   display: block;
-  background-color: black; /* fallback color behind video */
+  opacity: 0;
+  animation: bannerFadeIn 900ms ease forwards;
+}
+
+@keyframes bannerFadeIn {
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .banner { height: clamp(120px, 20vh, 180px); }
 }
 
 /* Logo Section */
