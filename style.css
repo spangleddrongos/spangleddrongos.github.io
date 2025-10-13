@@ -10,26 +10,30 @@ html, body {
   background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
 }
 
-/* ===== Responsive Banner Video ===== */
+/* Banner: show entire video (no cropping) */
 .banner {
-  position: relative;
   width: 100%;
-  height: clamp(140px, 22vh, 260px); /* mobile -> desktop */
-  overflow: hidden;
+  background: #000; /* behind video */
   border-bottom: 1px solid rgba(255,255,255,0.3);
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  background: #000; /* fallback behind video while loading */
 }
 
 .banner__video {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures the video fills neatly */
+  height: auto;                 /* scale by width, keep aspect ratio */
+  max-height: clamp(140px, 22vh, 260px); /* neat on phones/desktops */
+  object-fit: contain;          /* do NOT crop; letterbox if needed */
   display: block;
+  margin: 0 auto;
+  background: #000;
   opacity: 0;
   animation: bannerFadeIn 900ms ease forwards;
+}
+
+@keyframes bannerFadeIn { to { opacity: 1; } }
+
+@media (max-width: 768px) {
+  .banner__video { max-height: clamp(120px, 20vh, 180px); }
 }
 
 @keyframes bannerFadeIn {
