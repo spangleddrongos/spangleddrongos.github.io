@@ -114,15 +114,6 @@ html, body {
   overflow: hidden;
 }
 
-/* Subtle watermark behind content using the same logo */
-.event-dates__mark {
-  position: absolute;
-  inset: auto -40px -40px auto; /* bottom-right, slightly off */
-  width: 260px;
-  opacity: 0.08;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
-  pointer-events: none;
-}
 
 /* Inner wrapper keeps content above the watermark */
 .event-dates__inner {
