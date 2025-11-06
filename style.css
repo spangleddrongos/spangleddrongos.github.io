@@ -99,3 +99,108 @@ html, body {
     font-size: 1rem;
   }
 }
+
+/* ===== Event Dates (logo-inspired panel) ===== */
+.event-dates {
+  position: relative;
+  width: min(900px, 88%);
+  margin: 26px auto 10px;
+  padding: 28px 20px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255,255,255,0.18);
+  box-shadow: 0 0 24px rgba(255,255,255,0.14);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+/* Subtle watermark behind content using the same logo */
+.event-dates__mark {
+  position: absolute;
+  inset: auto -40px -40px auto; /* bottom-right, slightly off */
+  width: 260px;
+  opacity: 0.08;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+  pointer-events: none;
+}
+
+/* Inner wrapper keeps content above the watermark */
+.event-dates__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Title with gentle glow to echo the logo styling */
+.event-dates__title {
+  margin: 0 0 14px;
+  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.45),
+    0 0 18px rgba(255,255,255,0.16);
+}
+
+/* Two-column layout that collapses on mobile */
+.event-dates__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 26px;
+  align-items: start;
+  justify-content: center;
+}
+
+.event-year {
+  display: grid;
+  grid-template-columns: 84px 1fr; /* label + dates */
+  gap: 10px 14px;
+  align-items: center;
+}
+
+/* Year “pill” label with faint shine */
+.event-year__label {
+  justify-self: end;
+  font-weight: 800;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.12);
+  text-shadow: 0 0 6px rgba(255,255,255,0.35);
+  letter-spacing: 0.08em;
+}
+
+/* Dates with custom separators */
+.event-year__dates {
+  justify-self: start;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.event-year__dates .sep {
+  opacity: 0.7;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .event-dates {
+    width: 92%;
+    padding: 22px 16px;
+  }
+  .event-dates__grid {
+    grid-template-columns: 1fr; /* stack years */
+  }
+  .event-year {
+    grid-template-columns: 72px 1fr;
+  }
+  .event-year__label {
+    padding: 6px 10px;
+    letter-spacing: 0.06em;
+  }
+}
+
