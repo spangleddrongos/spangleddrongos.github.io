@@ -193,10 +193,9 @@ html, body {
     padding: 6px 10px;
     letter-spacing: 0.06em;
   }
-  /* ==================================================
-   SNOW IN MOONLIGHT
-   Decorative overlay across the entire browser window
-   ================================================== */
+ /* =========================================
+   Snow in moonlight overlay
+   ========================================= */
 
 #moonlight-snow {
   position: fixed;
@@ -207,19 +206,12 @@ html, body {
   user-select: none;
 }
 
-/* Individual snowflakes, stars and glowing particles */
 .moonlight-particle {
   position: absolute;
   top: -12vh;
+  line-height: 1;
 
   color: rgba(225, 240, 255, 0.95);
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  line-height: 1;
 
   text-shadow:
     0 0 4px rgba(255, 255, 255, 0.95),
@@ -237,13 +229,11 @@ html, body {
   will-change: transform;
 }
 
-/* Falling, drifting and gently rotating */
 @keyframes moonlight-fall {
   0% {
     transform:
       translate3d(0, -12vh, 0)
-      rotate(0deg)
-      scale(0.85);
+      rotate(0deg);
   }
 
   35% {
@@ -253,8 +243,7 @@ html, body {
         35vh,
         0
       )
-      rotate(90deg)
-      scale(1);
+      rotate(90deg);
   }
 
   70% {
@@ -264,8 +253,7 @@ html, body {
         75vh,
         0
       )
-      rotate(200deg)
-      scale(0.92);
+      rotate(200deg);
   }
 
   100% {
@@ -275,11 +263,12 @@ html, body {
         112vh,
         0
       )
-      rotate(320deg)
-      scale(0.8);
+      rotate(320deg);
   }
 }
-  body::after {
+
+/* Optional pale moonlight wash */
+body::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -300,20 +289,16 @@ html, body {
 
   mix-blend-mode: screen;
 }
-  @media (prefers-reduced-motion: reduce) {
-  .moonlight-particle {
-    animation: none;
-    display: none;
-  }
 
-  body::after {
-    opacity: 0.45;
-  }
-}
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   .moonlight-particle:nth-child(2n) {
     display: none;
   }
 }
-}
 
+@media (prefers-reduced-motion: reduce) {
+  .moonlight-particle {
+    display: none;
+    animation: none;
+  }
+}
