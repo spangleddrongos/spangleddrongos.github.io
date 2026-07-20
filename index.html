@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Snow in moonlight overlay -->
   <div id="moonlight-snow" aria-hidden="true"></div>
   <!-- Banner -->
 <header class="banner" aria-label="Spangled Drongos video banner">
@@ -110,25 +109,24 @@
       DONATIONS GRACIOUSLY ACCEPTED (PAY ID): Donate@spangled-drongos.net<br><br>
     </p>
   </section>
-   /*
-     * Negative delays mean the particles are already spread
-     * throughout the screen when the page first loads.
-     */
-    particle.style.animationDelay =
-      `${-Math.random() * 30}s`;
+    18 + Math.random() * 22 + "s";
+      particle.style.animationDelay =
+        -Math.random() * 40 + "s";
 
-    particle.style.setProperty(
-      "--moonlight-drift",
-      `${-70 + Math.random() * 140}px`
-    );
+      particle.style.setProperty(
+        "--moonlight-drift",
+        -70 + Math.random() * 140 + "px"
+      );
 
-    particle.style.setProperty(
-      "--moonlight-sway",
-      `${20 + Math.random() * 50}px`
-    );
+      particle.style.setProperty(
+        "--moonlight-sway",
+        20 + Math.random() * 50 + "px"
+      );
 
-    snowContainer.appendChild(particle);
-  }
+      snowContainer.appendChild(particle);
+    }
+  });
 </script>
+  
 </body>
 </html>
