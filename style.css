@@ -193,5 +193,127 @@ html, body {
     padding: 6px 10px;
     letter-spacing: 0.06em;
   }
+  /* ==================================================
+   SNOW IN MOONLIGHT
+   Decorative overlay across the entire browser window
+   ================================================== */
+
+#moonlight-snow {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Individual snowflakes, stars and glowing particles */
+.moonlight-particle {
+  position: absolute;
+  top: -12vh;
+
+  color: rgba(225, 240, 255, 0.95);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  line-height: 1;
+
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.95),
+    0 0 9px rgba(180, 215, 255, 0.75),
+    0 0 18px rgba(135, 165, 255, 0.45);
+
+  filter:
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0.75))
+    drop-shadow(0 0 8px rgba(165, 200, 255, 0.4));
+
+  animation-name: moonlight-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  will-change: transform;
+}
+
+/* Falling, drifting and gently rotating */
+@keyframes moonlight-fall {
+  0% {
+    transform:
+      translate3d(0, -12vh, 0)
+      rotate(0deg)
+      scale(0.85);
+  }
+
+  35% {
+    transform:
+      translate3d(
+        var(--moonlight-sway),
+        35vh,
+        0
+      )
+      rotate(90deg)
+      scale(1);
+  }
+
+  70% {
+    transform:
+      translate3d(
+        calc(var(--moonlight-drift) - var(--moonlight-sway)),
+        75vh,
+        0
+      )
+      rotate(200deg)
+      scale(0.92);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        var(--moonlight-drift),
+        112vh,
+        0
+      )
+      rotate(320deg)
+      scale(0.8);
+  }
+}
+  body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 80% 8%,
+      rgba(205, 225, 255, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(90, 120, 180, 0.05),
+      rgba(10, 15, 30, 0.08)
+    );
+
+  mix-blend-mode: screen;
+}
+  @media (prefers-reduced-motion: reduce) {
+  .moonlight-particle {
+    animation: none;
+    display: none;
+  }
+
+  body::after {
+    opacity: 0.45;
+  }
+}
+  @media (max-width: 768px) {
+  .moonlight-particle:nth-child(2n) {
+    display: none;
+  }
+}
 }
 
