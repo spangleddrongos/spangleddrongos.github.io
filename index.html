@@ -1,112 +1,242 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spangled Drongos</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spangled Drongos — a free, open, safe sunset dance by the lake at the Spirit Levels.">
+  <title>Spangled Drongos • Sunset Dance</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Banner -->
-<header class="banner" aria-label="Spangled Drongos video banner">
-  <video
-    class="banner__video"
-    src="sd_mirrorball_landscape_flash.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-  ></video>
-</header>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="site-shell">
+    <!-- HEADER: edit the welcome text here. Keep your media beside these files. -->
+    <header class="site-header">
+      <p class="welcome">★ Welcome to our little corner of the internet ★</p>
 
-<!-- Donations Section -->
-<section class="event-dates" aria-labelledby="donations-title">
-  <div class="event-dates__inner">
-    <h2 id="donations-title" class="event-dates__title">Donations</h2>
+      <h1>Spangled<br><span>Drongos</span></h1>
 
-    <div class="event-dates__grid">
-      <div class="event-year">
-        <div class="event-year__label">PayID</div>
-        <div class="event-year__dates">
-          <span>donate@spangled-drongos.net</span>
-        </div>
+      <p class="tagline">
+        A free, open, safe, <em>turbo eleganza</em> ritual of sound.
+      </p>
+
+      <div class="badges" aria-label="Event details">
+        <span>FREE &amp; OPEN</span>
+        <span>BY THE LAKE</span>
+        <span>DJs 4–10PM</span>
       </div>
+    </header>
+
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="#about">The dance</a>
+      <a href="#lineup">Lineup</a>
+      <a href="#donations">Donations</a>
+      <a href="#dates">Event dates</a>
+      <a href="#contact">Say g’day</a>
+    </nav>
+
+    <!-- BANNER VIDEO: change only src if you replace this video. -->
+    <div class="banner media-frame">
+      <video
+        src="sd_mirrorball_landscape_flash.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+        preload="metadata"
+        aria-label="Spangled Drongos mirrorball banner"
+      >
+        <p>Your browser cannot play this video.</p>
+      </video>
     </div>
-  </div>
-</section>
-<!-- Event Dates -->
-<section class="event-dates" aria-labelledby="event-dates-title">
-  <!-- watermark (uses the same logo for subtle branding) -->
 
-  <div class="event-dates__inner">
-    <h2 id="event-dates-title" class="event-dates__title">Event Dates</h2>
+    <main id="main" class="page-grid">
+      <div class="main-column">
 
-    <div class="event-dates__grid">
-      <div class="event-year">
-        <div class="event-year__label">2025</div>
-        <div class="event-year__dates">
-          <span>18 Oct</span>
-          <span class="sep" aria-hidden="true">::</span>
-          <span>22 Nov</span>
-          <span class="sep" aria-hidden="true">::</span>
-          <span>13 Dec</span>
-        </div>
+        <!-- ABOUT: edit the paragraphs below. -->
+        <section
+          id="about"
+          class="panel about-panel"
+          aria-labelledby="about-title"
+        >
+          <h2 id="about-title" class="panel-title">★ The dance ★</h2>
+
+          <div class="panel-body">
+            <p class="eyebrow">Turn up. Tune in. Dance together.</p>
+
+            <h3 class="sunset-title">a sunset dance</h3>
+
+            <p class="event-details">
+              <strong>DJs from 4–10pm</strong><br>
+              By the lake at the Spirit Levels.
+            </p>
+
+            <p class="rainbow-rule" aria-hidden="true">
+              ✦ &nbsp; ✧ &nbsp; ✦ &nbsp; ✧ &nbsp; ✦
+            </p>
+
+            <p>
+              <strong class="lime">Charcoal Drongos</strong>
+              = best dinner of the month by donation. Bring a cup.
+            </p>
+          </div>
+        </section>
+
+        <!-- LINEUP: edit the date, announcement and each time / artist pair. -->
+        <section
+          id="lineup"
+          class="panel"
+          aria-labelledby="lineup-title"
+        >
+          <h2 id="lineup-title" class="panel-title">♫ On the decks</h2>
+
+          <div class="panel-body">
+            <p class="lineup-date">
+              <time datetime="2026-03-14">14 March 2026</time>
+            </p>
+
+            <p class="announcement">Final Drongos of the season!</p>
+
+            <dl class="lineup-list">
+              <div>
+                <dt>4:00PM</dt>
+                <dd>Leather Tassel</dd>
+              </div>
+              <div>
+                <dt>5:30PM</dt>
+                <dd>Bandaloop</dd>
+              </div>
+              <div>
+                <dt>7:00PM</dt>
+                <dd>KiNS + hot dip</dd>
+              </div>
+              <div>
+                <dt>8:30PM</dt>
+                <dd>Tidy &amp; Samwise</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <!-- MAIN VIDEO: controls let visitors pause; loop remains continuous. -->
+        <section class="panel" aria-labelledby="video-title">
+          <h2 id="video-title" class="panel-title">✧ Drongo vision</h2>
+
+          <div class="main-video media-frame">
+            <video
+              src="mirrorball_cockatoo_upright.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              controls
+              preload="metadata"
+              aria-label="Spangled Drongos cockatoo video"
+            >
+              <p>Your browser cannot play this video.</p>
+            </video>
+          </div>
+        </section>
       </div>
 
-      <div class="event-year">
-        <div class="event-year__label">2026</div>
-        <div class="event-year__dates">
-          <span>17 Jan</span>
-          <span class="sep" aria-hidden="true">::</span>
-          <span>14 Feb</span>
-          <span class="sep" aria-hidden="true">::</span>
-          <span>14 Mar</span>
+      <aside class="sidebar" aria-label="Donations, dates and contact">
+
+        <!-- DONATIONS: this is a PayID, not an email payment link. -->
+        <section
+          id="donations"
+          class="panel donation-panel"
+          aria-labelledby="donations-title"
+        >
+          <h2 id="donations-title" class="panel-title">♥ Donations</h2>
+
+          <div class="panel-body">
+            <p>Donations graciously accepted.</p>
+            <p class="eyebrow">PAY ID</p>
+            <p class="payid">donate@spangled-drongos.net</p>
+          </div>
+        </section>
+
+        <!-- EVENT DATES: add or remove a list item for each event. -->
+        <section
+          id="dates"
+          class="panel"
+          aria-labelledby="dates-title"
+        >
+          <h2 id="dates-title" class="panel-title">☆ Event dates</h2>
+
+          <div class="panel-body dates-body">
+            <h3>2025</h3>
+
+            <ul class="dates-list">
+              <li><time datetime="2025-10-18">18 October</time></li>
+              <li><time datetime="2025-11-22">22 November</time></li>
+              <li><time datetime="2025-12-13">13 December</time></li>
+            </ul>
+
+            <h3>2026</h3>
+
+            <ul class="dates-list">
+              <li><time datetime="2026-01-17">17 January</time></li>
+              <li><time datetime="2026-02-14">14 February</time></li>
+              <li><time datetime="2026-03-14">14 March</time></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- CONTACT: update both the link text and mailto address if changed. -->
+        <section
+          id="contact"
+          class="panel"
+          aria-labelledby="contact-title"
+        >
+          <h2 id="contact-title" class="panel-title">✉ Say g’day</h2>
+
+          <div class="panel-body">
+            <p>Say g’day to the Executive Committee:</p>
+
+            <a
+              class="contact-link"
+              href="mailto:Gday@spangled-drongos.net"
+            >
+              Gday@spangled-drongos.net
+            </a>
+
+            <p class="signature">
+              With love from<br>
+              The Executive Committee 😘🙏
+            </p>
+          </div>
+        </section>
+
+        <!-- LOGO: keep this image in the same folder as index.html. -->
+        <div class="logo-section">
+          <img
+            src="Banner.JPG"
+            alt="Spangled Drongos"
+            class="logo"
+            loading="lazy"
+          >
         </div>
-      </div>
-    </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        We are grateful to host Spangled Drongos on Ngunnawal and
+        Ngambri lands. Sovereignty was never ceded.<br>
+        It always was and always will be, Aboriginal land.
+      </p>
+
+      <p class="hashtags">
+        #NongWave #BardCore #ShambolicDisco #DorisDubstep #SpaceHarps
+      </p>
+
+      <a class="back-to-top" href="#top">↑ Back to top ↑</a>
+
+      <p class="footer-note">★ See you by the lake ★</p>
+    </footer>
   </div>
-</section>
-  
-<!-- Main Video (continuous loop, no pause) -->
-<section class="main-video">
-  <video autoplay loop muted playsinline>
-    <source src="mirrorball_cockatoo_upright.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
-
-  <!-- Logo -->
-  <section class="logo-section">
-    <img src="spangled_drongos_logo_2025.png" alt="Spangled Drongos Logo" class="logo">
-  </section>
-  
-  <!-- Text Section -->
-  <section class="text-block">
-    <p>
-      A free, open, safe, 𝓽𝓾𝓻𝓫𝓸 𝓮𝓵𝓮𝓰𝓪𝓷𝔃𝓪 ritual of sound.<br>
-      🙌 🌅 𝓪 𝓼 𝓾 𝓷 𝓼 𝓮 𝓽 𝓭 𝓪 𝓷 𝓬 𝓮 🌅 🙌<br>
-      !! DJs from 4-10pm !!<br><br>
-      Location - by the lake at the Spirit Levels.<br><br>
-
-      𝕝𝕚𝕟𝕖𝕦𝕡 <br><br>
-
-      ░14 MARCH 2026░ <br><br>
-      **FINAL DRONGOS OF THE SEASON** <br><br>
-      
-
-      4:00PM - Leather Tassel <br><br>
-      5:30PM - Bandaloop <br><br>
-      7:00PM - KiNS + hot dip <br><br>
-      8:30PM - Tidy & Samwise <br><br>
-
-      ░C░h░a░r░c░o░a░l░ ░D░r░o░n░g░o░s░ = best dinner of the month by donation. Bring a cup.<br><br>
-      We are grateful to host Spangled Drongos on Ngunnawal and Ngambri lands. Sovereignty was never ceded.<br>
-      It always was and always will be, Aboriginal land.<br><br>
-      With love from 𝓣𝓱𝓮 𝓔𝔁𝓮𝓬𝓾𝓽𝓲𝓿𝓮 𝓒𝓸𝓶𝓶𝓲𝓽𝓽𝓮𝓮 😘🙏<br><br>
-      #NongWave #BardCore #ShambolicDisco #DorisDubstep #SpaceHarps<br><br>
-      Say G'day to the Executive Committee: Gday@spangled-drongos.net<br><br>
-      DONATIONS GRACIOUSLY ACCEPTED (PAY ID): Donate@spangled-drongos.net<br><br>
-    </p>
-  </section>
 </body>
 </html>
