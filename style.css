@@ -467,3 +467,39 @@ h1 span {
     gap: 10px;
   }
 }
+/* Retro visitor counter */
+
+.visitor-counter {
+  margin: 28px auto 0;
+  padding: 20px 8px;
+  text-align: center;
+}
+
+.visitor-counter__label {
+  margin: 0 0 12px;
+  color: #79f5ff;
+  font: bold 0.875rem/1.5 "Courier New", monospace;
+}
+
+.visitor-counter__digits {
+  display: inline-block;
+  padding: 10px 12px;
+  border: 4px inset #aaa;
+  background: #000;
+  color: #65ff65;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(101, 255, 101, 0.6);
+  box-shadow: 0 0 0 2px #333;
+}
+
+.visitor-counter__note {
+  margin: 12px 0 0;
+  color: #d0c6e6;
+  font: 0.875rem/1.5 "Courier New", monospace;
+}
+
