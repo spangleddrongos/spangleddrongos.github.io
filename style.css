@@ -502,4 +502,15 @@ h1 span {
   color: #d0c6e6;
   font: 0.875rem/1.5 "Courier New", monospace;
 }
+/* Disco-ball cursor: the centre is the clicking point. */
+html,
+body {
+  cursor: url("disco-ball-cursor.png") 16 16, auto;
+}
 
+/* Keep the disco ball over links and buttons. */
+a,
+button,
+[role="button"] {
+  cursor: url("disco-ball-cursor.png") 16 16, pointer;
+}
