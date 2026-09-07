@@ -7,6 +7,63 @@
   <title>Spangled Drongos • Sunset Dance</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Animated disco-ball cursor -->
+<div id="disco-cursor" class="disco-cursor" aria-hidden="true">
+  <img src="disco-ball-animated.gif" alt="">
+</div>
+
+<script>
+  (() => {
+    const cursor = document.getElementById("disco-cursor");
+    const picture = cursor.querySelector("img");
+    const root = document.documentElement;
+    const mouseDevice = window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+    );
+
+    let imageReady = picture.complete && picture.naturalWidth > 0;
+
+    function hideCursor() {
+      root.classList.remove("disco-cursor-active");
+    }
+
+    picture.addEventListener("load", () => {
+      imageReady = true;
+    });
+
+    // Keep the normal cursor if the image cannot load.
+    picture.addEventListener("error", () => {
+      imageReady = false;
+      hideCursor();
+    });
+
+    document.addEventListener("pointermove", (event) => {
+      if (
+        !mouseDevice.matches ||
+        event.pointerType !== "mouse" ||
+        !imageReady
+      ) {
+        hideCursor();
+        return;
+      }
+
+      // Subtract half the image size to centre it on the mouse.
+      cursor.style.transform =
+        `translate3d(${event.clientX - 16}px, ${event.clientY - 16}px, 0)`;
+
+      root.classList.add("disco-cursor-active");
+    });
+
+    document.documentElement.addEventListener(
+      "pointerleave",
+      hideCursor
+    );
+
+    window.addEventListener("blur", hideCursor);
+    document.addEventListener("visibilitychange", hideCursor);
+    mouseDevice.addEventListener("change", hideCursor);
+  })();
+</script>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
