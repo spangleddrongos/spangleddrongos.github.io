@@ -502,15 +502,45 @@ h1 span {
   color: #d0c6e6;
   font: 0.875rem/1.5 "Courier New", monospace;
 }
-/* Disco-ball cursor: the centre is the clicking point. */
-html,
-body {
-  cursor: url("disco-ball-cursor.png") 16 16, auto;
+/* Hidden until mouse movement activates the custom cursor. */
+.disco-cursor {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+/* Keep the image centred on the exact clicking point. */
+.disco-cursor img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  animation: disco-spin 3s linear infinite;
 }
 
-/* Keep the disco ball over links and buttons. */
-a,
-button,
-[role="button"] {
-  cursor: url("disco-ball-cursor.png") 16 16, pointer;
+@keyframes disco-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Apply only on devices with a precise, hovering pointer. */
+@media (hover: hover) and (pointer: fine) {
+  html.disco-cursor-active,
+  html.disco-cursor-active * {
+    cursor: none !important;
+  }
+
+  html.disco-cursor-active .disco-cursor {
+    display: block;
+  }
+}
+
+/* Respect visitors who prefer reduced animation. */
+@media (prefers-reduced-motion: reduce) {
+  .disco-cursor img {
+    animation: none;
+  }
 }
