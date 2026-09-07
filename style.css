@@ -544,3 +544,18 @@ h1 span {
     animation: none;
   }
 }
+/* The GIF now supplies the rotation. */
+.disco-cursor img {
+  animation: none;
+}
+
+/* Show the original still image for reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  html.disco-cursor-active .disco-cursor {
+    background: url("disco-ball-cursor.png") center / contain no-repeat;
+  }
+
+  .disco-cursor img {
+    visibility: hidden;
+  }
+}
