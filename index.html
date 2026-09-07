@@ -238,5 +238,71 @@
       <p class="footer-note">★ See you by the lake ★</p>
     </footer>
   </div>
+  <script>
+  // Persistent decorative counter.
+  // Starts randomly between 1 and 7 billion, then adds one per minute.
+  (() => {
+    const counter = document.getElementById("visitor-count");
+    if (!counter) return;
+
+    const storageKey = "spangled-drongos-random-counter";
+    const maximumStartingCount = 7_000_000_000;
+    const millisecondsPerView = 60_000;
+
+    let startingCount;
+    let startedAt;
+
+    // Restore the saved starting number and time.
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+
+      if (
+        saved &&
+        Number.isInteger(saved.startingCount) &&
+        saved.startingCount >= 1 &&
+        saved.startingCount <= maximumStartingCount &&
+        Number.isFinite(saved.startedAt) &&
+        saved.startedAt > 0 &&
+        saved.startedAt <= Date.now()
+      ) {
+        startingCount = saved.startingCount;
+        startedAt = saved.startedAt;
+      }
+    } catch {
+      // If storage is unavailable, count for this visit.
+    }
+
+    // Choose and save a random starting number on the first visit.
+    if (startingCount === undefined) {
+      startingCount =
+        Math.floor(Math.random() * maximumStartingCount) + 1;
+
+      startedAt = Date.now();
+
+      try {
+        localStorage.setItem(
+          storageKey,
+          JSON.stringify({ startingCount, startedAt })
+        );
+      } catch {
+        // The counter still works if browser storage is blocked.
+      }
+    }
+
+    function updateCounter() {
+      const elapsedMinutes = Math.max(
+        0,
+        Math.floor((Date.now() - startedAt) / millisecondsPerView)
+      );
+
+      const currentCount = startingCount + elapsedMinutes;
+
+      counter.textContent = String(currentCount).padStart(10, "0");
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 1000);
+  })();
+</script>
 </body>
 </html>
