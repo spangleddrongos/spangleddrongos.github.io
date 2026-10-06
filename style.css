@@ -653,3 +653,96 @@ h1 span {
     animation: none;
   }
 }
+/* SEASON FOUR — larger gold script with shimmer and movement */
+
+.dance-copy .season-announcement {
+  display: block;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.season-heading {
+  display: block;
+  margin-bottom: 16px;
+  color: #ffd966;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 800;
+}
+
+/* Animate the outer element so the text floats as one piece. */
+.luxurio-motion {
+  display: block;
+  padding: 8px 4px;
+  animation: luxurio-float 4s ease-in-out infinite;
+}
+
+/* Preserve the decorative Unicode lettering. */
+.luxurio-gold {
+  display: inline-block;
+  max-width: 100%;
+  font-family: inherit;
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+
+  /* Visible gold even without gradient-text support. */
+  color: #ffd34e;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+
+  filter:
+    drop-shadow(0 0 3px rgba(255, 205, 60, 0.6))
+    drop-shadow(0 0 10px rgba(255, 170, 0, 0.3));
+}
+
+/* Clip a moving gold-and-white highlight to the letters. */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .luxurio-gold {
+    background-image: linear-gradient(
+      110deg,
+      #c88a16 0%,
+      #ffd34e 30%,
+      #ffeaa0 43%,
+      #ffffff 50%,
+      #ffeaa0 57%,
+      #ffd34e 70%,
+      #c88a16 100%
+    );
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: luxurio-shimmer 3s linear infinite;
+  }
+}
+
+@keyframes luxurio-shimmer {
+  from {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes luxurio-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Keep gold lettering but stop motion when requested by the device. */
+@media (prefers-reduced-motion: reduce) {
+  .luxurio-motion,
+  .luxurio-gold {
+    animation: none;
+  }
+}
