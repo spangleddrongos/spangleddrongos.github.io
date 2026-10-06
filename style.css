@@ -632,3 +632,24 @@ h1 span {
   text-align: center;
   font: 0.875rem/1.5 "Courier New", monospace;
 }
+}
+
+@keyframes season-twinkle {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Keep the gold appearance without motion when preferred. */
+@media (prefers-reduced-motion: reduce) {
+  .season-gold,
+  .season-sparkle {
+    animation: none;
+  }
+}
