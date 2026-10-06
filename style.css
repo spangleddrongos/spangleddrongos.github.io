@@ -559,3 +559,42 @@ h1 span {
     visibility: hidden;
   }
 }
+
+/* THE DANCE — copy formatting */
+
+.dance-copy {
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.dance-copy p {
+  margin: 0 0 1.5rem;
+}
+
+.dance-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.dance-hours {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--pink);
+}
+
+.dance-food-note {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.dance-tags {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--pink);
+}
+
+.dance-franchise {
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--pink);
+  color: var(--yellow);
+}
