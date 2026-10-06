@@ -598,3 +598,37 @@ h1 span {
   border-top: 1px dashed var(--pink);
   color: var(--yellow);
 }
+
+/* LOCATION MAP */
+
+.location-panel {
+  background: #000;
+}
+
+.location-description {
+  color: var(--pink);
+  text-align: center;
+}
+
+.location-map-link {
+  display: block;
+  border: 2px inset var(--border-light);
+  background: #000;
+}
+
+.location-map-link:hover {
+  border-color: var(--cyan);
+}
+
+.location-map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.location-caption {
+  margin: 12px 0 0;
+  color: var(--muted);
+  text-align: center;
+  font: 0.875rem/1.5 "Courier New", monospace;
+}
